@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  rspec:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    entrypoint: ["sh", "/usr/src/app/entrypoint.sh"]
