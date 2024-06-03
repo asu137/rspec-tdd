@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# デフォルトのディレクトリを設定
-TARGET_DIR=${1:-Part1/Chapter1}
+# デフォルトのテストファイルを設定
+TARGET_FILE=${1:-Part1/Chapter1/MoneyTest.rb}
 
-# RSpecを指定されたディレクトリで実行
-rspec $TARGET_DIR
+# RSpecを指定されたテストファイルを実行
+rspec $TARGET_FILE
