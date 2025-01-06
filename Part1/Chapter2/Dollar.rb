@@ -8,7 +8,7 @@ module Part1
       end
 
       def times(multiplier)
-        @amount *= multiplier
+        return Dollar.new(@amount * multiplier)
       end
     end
   end
