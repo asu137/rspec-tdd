@@ -4,30 +4,22 @@ require_relative 'Franc'
 
 module Part1
   module Chapter8
-    RSpec.describe Dollar do
-      it 'test multiplication' do
-        five = Dollar.new(5)
-        expect(Dollar.new(10)).to eq(five.times(2))
-        expect(Dollar.new(15)).to eq(five.times(3))
+    RSpec.describe Money do
+      it 'Multiplication' do
+        five = Money.dollar(5)
+        expect(five.times(2)).to eq(Money.dollar(10))
+        expect(five.times(3)).to eq(Money.dollar(15))
       end
 
-      it 'test equality' do
-        expect(Dollar.new(5)).to eq(Dollar.new(5))
-        expect(Dollar.new(5)).not_to eq(Dollar.new(6))
-      end
-    end
-
-    RSpec.describe Franc do
-      it 'test multiplication' do
-        five = Franc.new(5)
-        expect(Franc.new(10)).to eq(five.times(2))
-        expect(Franc.new(15)).to eq(five.times(3))
+      it 'Equality' do
+        expect(Money.dollar(5)).to eq(Money.dollar(5))
+        expect(Money.dollar(5)).not_to eq(Money.dollar(6))
       end
 
-      it 'test equality' do
-        expect(Franc.new(5)).to eq(Franc.new(5))
-        expect(Franc.new(5)).not_to eq(Franc.new(6))
-        expect(Franc.new(5)).not_to eq(Dollar.new(5)) # Franc and Dollar should not be equal
+      it 'FrancMultiplication' do
+        five = Money.franc(5)
+        expect(Money.franc(10)).to eq(five.times(2))
+        expect(Money.franc(15)).to eq(five.times(3))
       end
     end
   end

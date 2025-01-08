@@ -12,6 +12,14 @@ module Part1
       def ==(money)
         money.is_a?(Money) && amount == money.amount && self.class == money.class
       end
+
+      def self.dollar(amount)
+        Dollar.new(amount)
+      end
+
+      def self.franc(amount)
+        Franc.new(amount)
+      end
     end
   end
 end
