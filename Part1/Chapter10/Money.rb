@@ -8,30 +8,24 @@ module Part1
         @currency = currency
       end
 
-      # ==メソッドをオーバーライド
-      # 同クラスのインスタンスであり、かつamount属性が等しい場合にtrueを返す
       def ==(money)
-        money.is_a?(Money) && amount == money.amount && self.class == money.class
+        money.is_a?(Money) && amount == money.amount && currency == money.currency
       end
 
       def times(multiplier)
-        Money.new(amount * multiplier, @currency)
-      end
-
-      def currency
-        @currency
+        self.class.new(amount * multiplier, currency)
       end
 
       def toString
-        amount.to_s + ' ' + @currency
+        "#{amount} #{currency}"
       end
 
-      def self.dollar(amount)
-        Dollar.new(amount, 'USD')
+      def self.dollar(amount_dollar)
+        Dollar.new(amount_dollar, 'USD')
       end
 
-      def self.franc(amount)
-        Franc.new(amount, 'CHF')
+      def self.franc(amount_franc)
+        Franc.new(amount_franc, 'CHF')
       end
     end
   end
